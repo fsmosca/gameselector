@@ -34,3 +34,12 @@ options:
 python main.py --input mypgn.pgn --output-good good.pgn --output-bad bad.pgn --engine stockfish_15_modern.exe --hash 128 --threads 1 --move-time-sec 2
 ```
 
+## Clone the repository
+
+Copy all files in this repository.
+
+```
+git clone https://github.com/fsmosca/gameselector.git
+```
+
+
