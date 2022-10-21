@@ -42,6 +42,10 @@ options:
 python main.py --input mygames.pgn --output-good good.pgn --output-bad bad.pgn --engine stockfish_15_modern.exe --hash 128 --threads 1 --move-time-sec 2
 ```
 
+```
+./gamecollector.exe --input mygames.pgn --output-good good.pgn --output-bad bad.pgn --engine stockfish_15_modern.exe --hash 128 --threads 1 --move-time-sec 2
+```
+
 ## Clone the repository
 
 Copy all files in this repository.
