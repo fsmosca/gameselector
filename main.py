@@ -7,7 +7,7 @@ where the losing side has > -7.00 according to latest SF.
 
 __script_name__ = 'game-selector'
 __goal__ = 'Separate good and bad games'
-__version__ = '0.1'
+__version__ = '0.2'
 
 
 import argparse
@@ -23,9 +23,9 @@ def main():
     parser.add_argument('--input', required=True, type=str,
                         help='Input pgn filename (required=True).')
     parser.add_argument('--output-good', required=True, type=str,
-                        help='Output filename for good games (required=True).')
+                        help='Output filename for good games, append mode (required=True).')
     parser.add_argument('--output-bad', required=True, type=str,
-                        help='Output filename for bad games (required=True).')
+                        help='Output filename for bad games, append mode (required=True).')
     parser.add_argument('--engine', required=True, type=str,
                         help='engine filename (required=True).')
     parser.add_argument('--hash', required=False, type=int, default=128,
@@ -45,9 +45,10 @@ def main():
     fn = args.input
     movetimesec = args.move_time_sec
     score_margin = args.score_margin
+    enginefn = args.engine
     cnt = 0
 
-    engine = chess.engine.SimpleEngine.popen_uci("stockfish_15_modern.exe")
+    engine = chess.engine.SimpleEngine.popen_uci(enginefn)
 
     with open(fn) as h:
         while True:
