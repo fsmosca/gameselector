@@ -7,7 +7,7 @@ where the losing side has > -7.00 according to latest SF.
 
 __script_name__ = 'game-selector'
 __goal__ = 'Separate good and bad games'
-__version__ = '0.2'
+__version__ = '0.2.1'
 
 
 import argparse
@@ -69,10 +69,13 @@ def main():
                 if 'polyglot: resign (illegal engine move' in comment:
                     is_bad = True
 
-                if 'Forfeit due to invalid move' in comment:
+                elif 'Forfeit due to invalid move' in comment:
                     is_bad = True
 
-                if 'wins on time' in comment:
+                elif 'wins on time' in comment:
+                    is_bad = True
+
+                elif 'exited unexpectedly' in comment:
                     is_bad = True
                     
                 if is_bad:
